@@ -11,6 +11,8 @@ repositories {
     mavenCentral()
 }
 
+ext.guiceVersion = '4.1.0'
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
@@ -23,6 +25,13 @@ dependencies {
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     compile 'org.slf4j:slf4j-api:1.7.25'
 
-// https://mvnrepository.com/artifact/com.h2database/h2
+
+    // Google Guice
+    compile "com.google.inject:guice:$guiceVersion",
+            "com.google.inject.extensions:guice-multibindings:$guiceVersion",
+            "com.google.inject.extensions:guice-assistedinject:$guiceVersion"
+    
+    // https://mvnrepository.com/artifact/com.h2database/h2
     testCompile 'com.h2database:h2:1.4.197'
+
 }
